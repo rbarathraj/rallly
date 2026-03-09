@@ -10,10 +10,8 @@ COPY . .
 
 RUN pnpm install --no-frozen-lockfile --ignore-scripts
 
-ENV NEXT_TELEMETRY_DISABLED=1
-ENV NODE_ENV=production
+RUN pnpm --filter @rallly/database exec prisma generate
 
-RUN pnpm --filter @rallly/database run generate
 RUN pnpm --filter @rallly/web run build
 
 EXPOSE 3000
