@@ -13,14 +13,3 @@ RUN pnpm --filter @rallly/web build
 EXPOSE 3000
 
 CMD ["pnpm", "--filter", "@rallly/web", "start"]
-```
-
-5. Click **"Commit changes"** → **"Commit directly to main"**
-
----
-
-## Then in Railway
-
-1. Go to **Variables** → add:
-```
-   RAILWAY_DOCKERFILE_PATH = Dockerfile
